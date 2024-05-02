@@ -3,8 +3,6 @@ import { Provider } from './provider';
 import Client from "@/app/[locale]/client";
 
 export default async function Home({ params: { locale } }: Readonly<{ params: { locale: string } }>) {
-  // Uncomment to test Static Generation
-  // setStaticParamsLocale(locale);
 
   const t = await getI18n();
   const t2 = await getScopedI18n('scope.more');
