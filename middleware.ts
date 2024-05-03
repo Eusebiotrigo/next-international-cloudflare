@@ -4,9 +4,11 @@ import type { NextRequest } from 'next/server';
 const I18nMiddleware = createI18nMiddleware({
   locales: ['en', 'fr'],
   defaultLocale: 'en',
+  urlMappingStrategy: "redirect",
 });
 
 export function middleware(request: NextRequest) {
+  // console.log("Cookie", request.cookies.get("Next-Locale")?.value);
   return I18nMiddleware(request);
 }
 
