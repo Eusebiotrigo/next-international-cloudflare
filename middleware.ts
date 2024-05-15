@@ -1,6 +1,8 @@
 import { createI18nMiddleware } from 'next-international/middleware';
 import type { NextRequest } from 'next/server';
 
+export const runtime = 'edge';
+
 const I18nMiddleware = createI18nMiddleware({
   locales: ['en', 'fr'],
   defaultLocale: 'en',
